@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ASAlertController_Example' do
+  pod 'ASAlertController', :path => '../'
+
+  target 'ASAlertController_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+  end
+end
