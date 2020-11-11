@@ -1,0 +1,6 @@
+framework module ASAlertController {
+  umbrella header "ASAlertController-umbrella.h"
+
+  export *
+  module * { export * }
+}

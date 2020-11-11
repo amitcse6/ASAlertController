@@ -1,0 +1,27 @@
+PODS:
+  - ASAlertController (0.1.0)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+
+DEPENDENCIES:
+  - ASAlertController (from `../`)
+  - FBSnapshotTestCase (~> 2.1.4)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  ASAlertController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ASAlertController: 4c4904fffacb2da218a0013c006559e0ce910814
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+
+PODFILE CHECKSUM: b8beec9a470f584dde69f114e3551bb40d4eba51
+
+COCOAPODS: 1.8.4
