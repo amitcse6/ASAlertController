@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ASAlertController'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'ASAlertController for Dynamic UI Change'
 
 # This description is used to generate tags and improve search results.
@@ -28,12 +28,12 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/amitcse6/ASAlertController.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.3'
 
   s.source_files = 'Source/**/*.swift'
   s.swift_version = '5.0'
   s.platforms = {
-      "ios": "8.0"
+      "ios": "9.3"
   }
   
   # s.resource_bundles = {

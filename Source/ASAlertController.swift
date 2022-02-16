@@ -60,7 +60,7 @@ class StoreBack: UIView {
     
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        print("touches: \(touches.first?.view?.tag)")
+        //print("touches: \(touches.first?.view?.tag)")
         if let touch = touches.first, touch.view != container {
             delegate?.onTapBack()
         }
