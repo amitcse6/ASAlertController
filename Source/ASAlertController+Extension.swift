@@ -12,8 +12,12 @@ import UIKit
 @available(iOS 9.0, *)
 extension UIViewController {
     @discardableResult
-    public func alertShow(_ alert: ASAlertController) -> ASAlertController {
+    public func asAlertShow(_ alert: ASAlertController) -> ASAlertController {
         return alert.show(self)
+    }
+
+    public func asAlertClose(_ alert: ASAlertController) {
+        alert.dismissController()
     }
 }
 
@@ -25,99 +29,185 @@ extension ASAlertController {
             setupClassicConstraints()
         case .photoSelectionOption:
             setupPhotoSelectionOptionConstraints()
+        case .gonzo:
+            setupGonzoConstraints()
         }
         self.view.backgroundColor = UIColor.init(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.5)
-        self.modalPresentationStyle = .fullScreen
+        self.modalPresentationStyle = .overCurrentContext
         self.modalTransitionStyle = .crossDissolve
         parents?.present(self, animated: false, completion: nil)
         return self
     }
     
-    public func dismissController(_ container: UIView?) {
+    public func dismissController() {
         self.dismiss(animated: false) {
         }
     }
     
     func setupClassicConstraints() {
-        container?.translatesAutoresizingMaskIntoConstraints = false
-        container?.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: containerPadding).isActive = true
-        container?.leftAnchor.constraint(equalTo: view.leftAnchor, constant: containerPadding).isActive = true
-        container?.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -containerPadding).isActive = true
-        container?.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -containerPadding).isActive = true
-        container?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        container?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        container?.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        storeBack?.translatesAutoresizingMaskIntoConstraints = false
+        storeBack?.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        storeBack?.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        storeBack?.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -0).isActive = true
+        storeBack?.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -0).isActive = true
+        
+        storeBack?.container?.translatesAutoresizingMaskIntoConstraints = false
+        storeBack?.container?.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: containerPadding).isActive = true
+        storeBack?.container?.leftAnchor.constraint(equalTo: view.leftAnchor, constant: containerPadding).isActive = true
+        storeBack?.container?.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -containerPadding).isActive = true
+        storeBack?.container?.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -containerPadding).isActive = true
+        storeBack?.container?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        storeBack?.container?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        storeBack?.container?.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         
         alertTitleLabel?.translatesAutoresizingMaskIntoConstraints = false
-        alertTitleLabel?.topAnchor.constraint(equalTo: container!.topAnchor, constant: padding).isActive = true
-        alertTitleLabel?.leftAnchor.constraint(equalTo: container!.leftAnchor, constant: padding).isActive = true
-        alertTitleLabel?.rightAnchor.constraint(equalTo: container!.rightAnchor, constant: -padding).isActive = true
+        alertTitleLabel?.topAnchor.constraint(equalTo: storeBack!.container!.topAnchor, constant: padding).isActive = true
+        alertTitleLabel?.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: padding).isActive = true
+        alertTitleLabel?.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -padding).isActive = true
         alertTitleLabel?.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         
         alertMessageLabel?.translatesAutoresizingMaskIntoConstraints = false
         alertMessageLabel?.topAnchor.constraint(equalTo: alertTitleLabel!.bottomAnchor, constant: padding).isActive = true
-        alertMessageLabel?.leftAnchor.constraint(equalTo: container!.leftAnchor, constant: padding).isActive = true
-        alertMessageLabel?.rightAnchor.constraint(equalTo: container!.rightAnchor, constant: -padding).isActive = true
+        alertMessageLabel?.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: padding).isActive = true
+        alertMessageLabel?.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -padding).isActive = true
         alertMessageLabel?.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         
         for (index, action) in alertActions.enumerated() {
-            action.backgroundColor = .asarandom
-            container?.addSubview(action)
+            action.setBackgroundColor(.asarandom)
+            storeBack!.container?.addSubview(action)
             action.translatesAutoresizingMaskIntoConstraints = false
             if index == 0 {
-                action.leftAnchor.constraint(equalTo: container!.leftAnchor, constant: actionPadding).isActive = true
+                action.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: actionPadding).isActive = true
             }else {
                 action.leftAnchor.constraint(equalTo: alertActions[index-1].rightAnchor, constant: actionPadding).isActive = true
             }
             if index == alertActions.count - 1 {
-                action.rightAnchor.constraint(equalTo: container!.rightAnchor, constant: -actionPadding).isActive = true
+                action.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -actionPadding).isActive = true
             }
-            action.bottomAnchor.constraint(equalTo: container!.bottomAnchor, constant: -actionPadding).isActive = true
+            action.bottomAnchor.constraint(equalTo: storeBack!.container!.bottomAnchor, constant: -actionPadding).isActive = true
             action.widthAnchor.constraint(equalTo: alertActions.first!.widthAnchor).isActive = true
         }
     }
     
     func setupPhotoSelectionOptionConstraints() {
-        container?.translatesAutoresizingMaskIntoConstraints = false
-        container?.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: containerPadding).isActive = true
-        container?.leftAnchor.constraint(equalTo: view.leftAnchor, constant: containerPadding).isActive = true
-        container?.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -containerPadding).isActive = true
-        container?.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -containerPadding).isActive = true
-        container?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        container?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        container?.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        storeBack?.translatesAutoresizingMaskIntoConstraints = false
+        storeBack?.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        storeBack?.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        storeBack?.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -0).isActive = true
+        storeBack?.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -0).isActive = true
         
+        storeBack?.container?.translatesAutoresizingMaskIntoConstraints = false
+        storeBack?.container?.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: containerPadding).isActive = true
+        storeBack?.container?.leftAnchor.constraint(equalTo: view.leftAnchor, constant: containerPadding).isActive = true
+        storeBack?.container?.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -containerPadding).isActive = true
+        storeBack?.container?.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -containerPadding).isActive = true
+        storeBack?.container?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        storeBack?.container?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        storeBack?.container?.heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         alertTitleLabel?.translatesAutoresizingMaskIntoConstraints = false
-        alertTitleLabel?.topAnchor.constraint(equalTo: container!.topAnchor, constant: 0).isActive = true
-        alertTitleLabel?.leftAnchor.constraint(equalTo: container!.leftAnchor, constant: 0).isActive = true
-        alertTitleLabel?.rightAnchor.constraint(equalTo: container!.rightAnchor, constant: -0).isActive = true
+        alertTitleLabel?.topAnchor.constraint(equalTo: storeBack!.container!.topAnchor, constant: 0).isActive = true
+        alertTitleLabel?.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: 0).isActive = true
+        alertTitleLabel?.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -0).isActive = true
         alertTitleLabel?.heightAnchor.constraint(equalToConstant: 0).isActive = true
         
         alertMessageLabel?.translatesAutoresizingMaskIntoConstraints = false
         alertMessageLabel?.topAnchor.constraint(equalTo: alertTitleLabel!.bottomAnchor, constant: 0).isActive = true
-        alertMessageLabel?.leftAnchor.constraint(equalTo: container!.leftAnchor, constant: 0).isActive = true
-        alertMessageLabel?.rightAnchor.constraint(equalTo: container!.rightAnchor, constant: -0).isActive = true
+        alertMessageLabel?.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: 0).isActive = true
+        alertMessageLabel?.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -0).isActive = true
         alertMessageLabel?.heightAnchor.constraint(equalToConstant: 0).isActive = true
         
         for (index, action) in alertActions.enumerated() {
             action.backgroundColor = .asarandom
-            container?.addSubview(action)
+            storeBack!.container?.addSubview(action)
             action.translatesAutoresizingMaskIntoConstraints = false
             if index == 0 {
-                action.topAnchor.constraint(equalTo: container!.topAnchor, constant: actionPadding).isActive = true
+                action.topAnchor.constraint(equalTo: storeBack!.container!.topAnchor, constant: actionPadding).isActive = true
             }else {
                 action.topAnchor.constraint(equalTo: alertActions[index-1].bottomAnchor, constant: actionPadding).isActive = true
             }
-            action.leftAnchor.constraint(equalTo: container!.leftAnchor, constant: actionPadding).isActive = true
-            action.rightAnchor.constraint(equalTo: container!.rightAnchor, constant: -actionPadding).isActive = true
+            action.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: actionPadding).isActive = true
+            action.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -actionPadding).isActive = true
             if index == alertActions.count - 1 {
-                action.bottomAnchor.constraint(equalTo: container!.bottomAnchor, constant: -actionPadding).isActive = true
+                action.bottomAnchor.constraint(equalTo: storeBack!.container!.bottomAnchor, constant: -actionPadding).isActive = true
             }
             action.heightAnchor.constraint(equalTo: alertActions.first!.heightAnchor).isActive = true
+        }
+    }
+    
+    func setupGonzoConstraints() {
+        storeBack?.translatesAutoresizingMaskIntoConstraints = false
+        storeBack?.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        storeBack?.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        storeBack?.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -0).isActive = true
+        storeBack?.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -0).isActive = true
+        
+        storeBack?.container?.translatesAutoresizingMaskIntoConstraints = false
+        storeBack?.container?.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor, constant: containerPadding).isActive = true
+        storeBack?.container?.leftAnchor.constraint(equalTo: view.leftAnchor, constant: containerPadding).isActive = true
+        storeBack?.container?.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -containerPadding).isActive = true
+        storeBack?.container?.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -containerPadding).isActive = true
+        storeBack?.container?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        storeBack?.container?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        if containerSize.height > 0 {
+            storeBack?.container?.heightAnchor.constraint(equalToConstant: containerSize.height).isActive = true
+        }else {
+            storeBack?.container?.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        }
+     
+        alertTitleLabel?.translatesAutoresizingMaskIntoConstraints = false
+        alertTitleLabel?.topAnchor.constraint(equalTo: storeBack!.container!.topAnchor, constant: padding).isActive = true
+        alertTitleLabel?.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: padding).isActive = true
+        alertTitleLabel?.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -padding).isActive = true
+        alertTitleLabel?.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        
+        merginView?.setCurveStyle1(merginColor)
+        merginView?.translatesAutoresizingMaskIntoConstraints = false
+        merginView?.topAnchor.constraint(equalTo: storeBack!.container!.topAnchor, constant: 0).isActive = true
+        merginView?.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: 0).isActive = true
+        merginView?.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -0).isActive = true
+        merginView?.bottomAnchor.constraint(equalTo: storeBack!.container!.bottomAnchor, constant: -buttonContainerHeight-containerPadding*2).isActive = true
+        
+        alertMessageLabel?.translatesAutoresizingMaskIntoConstraints = false
+        alertMessageLabel?.topAnchor.constraint(equalTo: alertTitleLabel!.bottomAnchor, constant: padding).isActive = true
+        alertMessageLabel?.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: padding).isActive = true
+        alertMessageLabel?.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -padding).isActive = true
+
+        buttonContainer?.translatesAutoresizingMaskIntoConstraints = false
+        let leadingAnchor = buttonContainer?.leadingAnchor.constraint(greaterThanOrEqualTo: storeBack!.container!.leadingAnchor, constant: containerPadding)
+        leadingAnchor?.priority = UILayoutPriority(250)
+        leadingAnchor?.isActive = true
+        let trailingAnchor = buttonContainer?.trailingAnchor.constraint(lessThanOrEqualTo: storeBack!.container!.trailingAnchor, constant: -containerPadding)
+        trailingAnchor?.priority = UILayoutPriority(250)
+        trailingAnchor?.isActive = true
+        buttonContainer?.bottomAnchor.constraint(equalTo: storeBack!.container!.bottomAnchor, constant: -containerPadding).isActive = true
+        buttonContainer?.centerXAnchor.constraint(equalTo: storeBack!.container!.centerXAnchor).isActive = true
+        buttonContainer?.heightAnchor.constraint(equalToConstant: CGFloat(buttonContainerHeight)).isActive = true
+        
+        for (index, action) in alertActions.enumerated() {
+            buttonContainer?.addSubview(action)
+            action.backgroundColor = action.backColor
+            action.setCurveStyle1()
+            action.translatesAutoresizingMaskIntoConstraints = false
+            action.topAnchor.constraint(equalTo: buttonContainer!.topAnchor, constant: 0).isActive = true
+            if index == 0 {
+                action.leftAnchor.constraint(equalTo: buttonContainer!.leftAnchor, constant: 0).isActive = true
+            }else {
+                action.leftAnchor.constraint(equalTo: alertActions[index-1].rightAnchor, constant: 0).isActive = true
+            }
+            if index == alertActions.count - 1 {
+                action.rightAnchor.constraint(equalTo: buttonContainer!.rightAnchor, constant: -0).isActive = true
+            }
+            action.bottomAnchor.constraint(equalTo: buttonContainer!.bottomAnchor, constant: -0).isActive = true
+            if let buttonWidth = action.buttonWidth {
+                action.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
+            }else {
+                action.widthAnchor.constraint(equalTo: alertActions.first!.widthAnchor).isActive = true
+            }
         }
     }
     

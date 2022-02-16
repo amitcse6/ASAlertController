@@ -39,19 +39,26 @@ public class ASAlertControllerPhotoSelectionOption: ASAlertController {
     
     public func setupUIElements() {
         self.view.backgroundColor = UIColor.init(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 0.7)
-        self.view.isUserInteractionEnabled = true
-        self.view.addGestureRecognizer(ASAlertGestureRecognizer(target: self, action: #selector(onTap)))
+        //self.view.isUserInteractionEnabled = true
+        //self.view.addGestureRecognizer(ASAlertGestureRecognizer(target: self, action: #selector(onTap)))
         
-        container = UIView()
-        container?.backgroundColor = .white
+        storeBack = StoreBack()
+        storeBack?.delegate = self
+        self.view.addSubview(storeBack.unsafelyUnwrapped)
+        
+        storeBack!.container = UIView()
         setShadow(UIColor(asaValue: "#ffffff", alpha: 1.0), UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0), UIColor(asaValue: "#AAAAAA", alpha: 1.0), 5, scale: true, maskedCorners: [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner])
-        self.view.addSubview(container.unsafelyUnwrapped)
+        self.storeBack?.addSubview(storeBack!.container.unsafelyUnwrapped)
         
-        alertTitleLabel = ASAlertTitleLabel(alertTitle)
-        self.container?.addSubview(alertTitleLabel.unsafelyUnwrapped)
+        alertTitleLabel = ASAttributedLabel()
+        alertTitleLabel?.text = alertTitle
+        alertTitleLabel?.textAlignment = .left
+        self.storeBack!.container?.addSubview(alertTitleLabel.unsafelyUnwrapped)
         
-        alertMessageLabel = ASAlertMessageLabel(alertMessage)
-        self.container?.addSubview(alertMessageLabel.unsafelyUnwrapped)
+        alertMessageLabel = ASAttributedLabel()
+        alertMessageLabel?.text = alertMessage
+        alertMessageLabel?.textAlignment = .left
+        self.storeBack!.container?.addSubview(alertMessageLabel.unsafelyUnwrapped)
     }
     
     public func setupConstraints() {

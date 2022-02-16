@@ -11,6 +11,11 @@ import ASAlertController
 
 class ViewController: UIViewController {
     
+    private var attributes = [
+        ASAttribute(value: "Your password has been locked. Please reset your password from the link of the forgot password ", type: .defaultAttr),
+        ASAttribute(value: " in the Login screen.", attrs: [.font: UIFont.systemFont(ofSize: 16, weight: .black), .foregroundColor: UIColor.lightGray] as [NSAttributedString.Key : Any]),
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,11 +27,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func deleteEvent(_ sender: Any) {
-        alertShow(ASAlertControllerClassic("Alert!", "Do you want to delete?").action("Cancel", {
-            print("cancel...")
-        }).action("Yes", {
-            print("yes...")
+        let alert = ASAlertControllerGonzoStyle("", "Do you want to delete?")
+        alert.setCornerRadious(5)
+        alert.buttonContainerHeight = 40
+        alert.merginColor = .gray
+        alert.containerSize = CGSize(width: -1, height: 250)
+        asAlertShow(alert.action("Yes", 100, .green, .green, {
+            alert.dismissController()
         }))
+        alert.alertTitleLabel?.text = ""
+        alert.alertMessageLabel?.numberOfLines = 0
+        alert.alertMessageLabel?
+            .setAttributes(attributes)
+            .setEvent { [weak self] (attributeLabelIndex, attributeIndex, attribute) in
+                if let value = attribute.value, value == " in the Login screen." {
+                    print("value: \(value)")
+                    let alert = UIAlertController(title: "Alert", message: value, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self?.present(alert, animated: true, completion: nil)
+                }}
     }
 }
 

@@ -19,14 +19,20 @@ public class ASAlertAction: UIView {
     var actionClouser: ASAlertActionClouser?
     var containerPadding: CGFloat = 4
     var padding: CGFloat = 4
+    var buttonWidth: CGFloat?
+    var backColor: UIColor = .white
+    var borderColor: UIColor = .gray
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    init(_ title: String?, _ actionClouser: ASAlertActionClouser?) {
+    init(_ title: String?, _ buttonWidth: CGFloat?, _ backColor: UIColor, _ borderColor: UIColor, _ actionClouser: ASAlertActionClouser?) {
         super.init(frame: CGRect.zero)
         self.title = title
+        self.buttonWidth = buttonWidth
+        self.backColor = backColor
+        self.borderColor = borderColor
         self.actionClouser = actionClouser
         setup()
     }
@@ -38,11 +44,13 @@ public class ASAlertAction: UIView {
     
     public func setupUIElements() {
         container = UIView()
-        container?.backgroundColor = .white
+        container?.backgroundColor = .clear
+        
         addSubview(container.unsafelyUnwrapped)
         
         button = UIButton()
         button?.backgroundColor = .clear
+        button?.tintColor = .clear
         button?.setTitle(title, for: .normal)
         button?.titleLabel?.textAlignment = .center
         button?.titleLabel?.numberOfLines = 0
@@ -63,6 +71,19 @@ public class ASAlertAction: UIView {
         button?.leftAnchor.constraint(equalTo: container!.leftAnchor, constant: padding).isActive = true
         button?.rightAnchor.constraint(equalTo: container!.rightAnchor, constant: -padding).isActive = true
         button?.bottomAnchor.constraint(equalTo: container!.bottomAnchor, constant: -padding).isActive = true
+    }
+    
+    func setBackgroundColor(_ color: UIColor) {
+        container?.backgroundColor = color
+        button?.tintColor = color
+        button?.backgroundColor = color
+    }
+    
+    func setCurveStyle1() {
+        layer.cornerRadius = 5
+        layer.borderWidth = 1
+        layer.borderColor = borderColor.cgColor
+        layer.masksToBounds = true
     }
     
     @objc func touchUpInsideEvent(_ button: UIButton) {

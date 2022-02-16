@@ -21,6 +21,13 @@
 		6DBC8EB7532E931C2FBDA71D1E0B66A4 /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A83AE4362CF1D4764E00E4602A2D648 /* FBSnapshotTestCase-dummy.m */; };
 		7C590DACA78EDCDD2725EF295B82D03A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		88396E68DC05A379282F3B374F75F43C /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE35F81C954881204729C569018D98C0 /* FBSnapshotTestController.m */; };
+		8952031F27BCCE0500309D3E /* ASAlertControllerGonzoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952031E27BCCE0500309D3E /* ASAlertControllerGonzoStyle.swift */; };
+		8952032127BCDB2400309D3E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032027BCDB2400309D3E /* UIView+Extension.swift */; };
+		8952032727BCDE0D00309D3E /* ASAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032227BCDE0D00309D3E /* ASAttribute.swift */; };
+		8952032827BCDE0D00309D3E /* ASAttribute+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032327BCDE0D00309D3E /* ASAttribute+Extension.swift */; };
+		8952032927BCDE0D00309D3E /* ASAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032427BCDE0D00309D3E /* ASAttributedLabel.swift */; };
+		8952032A27BCDE0D00309D3E /* ASAttributedLabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032527BCDE0D00309D3E /* ASAttributedLabel+Extension.swift */; };
+		8952032B27BCDE0D00309D3E /* UITapGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032627BCDE0D00309D3E /* UITapGestureRecognizer+Extension.swift */; };
 		8C1D6975FFE8D0765B3E9AED0AFD3F52 /* Pods-ASAlertController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23AA197DF8FF0CCF6582AC4E00816244 /* Pods-ASAlertController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C9311B367B068AD2327D7C3A467CF52 /* Pods-ASAlertController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F53816921A799CA381DADB63567E1002 /* Pods-ASAlertController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CE3BF0ACE07EA42DD5DAC871BF4B767 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C8BBFE2D9E3A9C566221B1DE04E91C /* FBSnapshotTestCase.m */; };
@@ -102,6 +109,13 @@
 		82D2DF1ABBBD85F5E079D7D0EB5479BC /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
 		83DDC2B5941922914168A54557B21420 /* ASAlertController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ASAlertController-dummy.m"; sourceTree = "<group>"; };
 		88EE4F95531D217A595AA8D85A24FA39 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
+		8952031E27BCCE0500309D3E /* ASAlertControllerGonzoStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASAlertControllerGonzoStyle.swift; sourceTree = "<group>"; };
+		8952032027BCDB2400309D3E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		8952032227BCDE0D00309D3E /* ASAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAttribute.swift; sourceTree = "<group>"; };
+		8952032327BCDE0D00309D3E /* ASAttribute+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ASAttribute+Extension.swift"; sourceTree = "<group>"; };
+		8952032427BCDE0D00309D3E /* ASAttributedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAttributedLabel.swift; sourceTree = "<group>"; };
+		8952032527BCDE0D00309D3E /* ASAttributedLabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ASAttributedLabel+Extension.swift"; sourceTree = "<group>"; };
+		8952032627BCDE0D00309D3E /* UITapGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
 		8CAA89EEF1039078430D7A886477E365 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8CE253DE76CA5275812B48BF19B026FA /* Pods-ASAlertController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ASAlertController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8F1FE5C23F1BC485C54B92C32E78391F /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
@@ -368,17 +382,24 @@
 		D6189391255AB91400741C66 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8952032227BCDE0D00309D3E /* ASAttribute.swift */,
+				8952032327BCDE0D00309D3E /* ASAttribute+Extension.swift */,
+				8952032427BCDE0D00309D3E /* ASAttributedLabel.swift */,
+				8952032527BCDE0D00309D3E /* ASAttributedLabel+Extension.swift */,
+				8952032627BCDE0D00309D3E /* UITapGestureRecognizer+Extension.swift */,
 				D6189392255AB91400741C66 /* UIColor+Extension.swift */,
 				D6189393255AB91400741C66 /* ASAlertController.swift */,
 				D6189394255AB91400741C66 /* ASAlertGestureRecognizer.swift */,
-				D6189395255AB91400741C66 /* ASAlertControllerPhotoSelectionOption.swift */,
 				D6189396255AB91400741C66 /* ASAlertMessageLabel.swift */,
 				D6189397255AB91400741C66 /* ASAlertController+Extension.swift */,
 				D6189398255AB91400741C66 /* ASAlertControllerClassic.swift */,
+				D6189395255AB91400741C66 /* ASAlertControllerPhotoSelectionOption.swift */,
+				8952031E27BCCE0500309D3E /* ASAlertControllerGonzoStyle.swift */,
 				D6189399255AB91400741C66 /* ASAlertController+Getter.swift */,
 				D618939A255AB91400741C66 /* ASAlertAction.swift */,
 				D618939B255AB91400741C66 /* ASAlertTitleLabel.swift */,
 				D618939C255AB91400741C66 /* ASAlertController+Setter.swift */,
+				8952032027BCDB2400309D3E /* UIView+Extension.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -579,16 +600,23 @@
 			files = (
 				D618939D255AB91400741C66 /* UIColor+Extension.swift in Sources */,
 				D61893A7255AB91400741C66 /* ASAlertController+Setter.swift in Sources */,
+				8952032A27BCDE0D00309D3E /* ASAttributedLabel+Extension.swift in Sources */,
 				0A9E7E0A52728CEFFF8993C1C81B3B5E /* ASAlertController-dummy.m in Sources */,
 				D61893A1255AB91400741C66 /* ASAlertMessageLabel.swift in Sources */,
+				8952032B27BCDE0D00309D3E /* UITapGestureRecognizer+Extension.swift in Sources */,
 				D61893A5255AB91400741C66 /* ASAlertAction.swift in Sources */,
 				D61893A6255AB91400741C66 /* ASAlertTitleLabel.swift in Sources */,
+				8952032827BCDE0D00309D3E /* ASAttribute+Extension.swift in Sources */,
 				D61893A4255AB91400741C66 /* ASAlertController+Getter.swift in Sources */,
 				D618939E255AB91400741C66 /* ASAlertController.swift in Sources */,
+				8952032127BCDB2400309D3E /* UIView+Extension.swift in Sources */,
 				D61893A3255AB91400741C66 /* ASAlertControllerClassic.swift in Sources */,
 				D61893A2255AB91400741C66 /* ASAlertController+Extension.swift in Sources */,
+				8952032727BCDE0D00309D3E /* ASAttribute.swift in Sources */,
 				D618939F255AB91400741C66 /* ASAlertGestureRecognizer.swift in Sources */,
+				8952032927BCDE0D00309D3E /* ASAttributedLabel.swift in Sources */,
 				D61893A0255AB91400741C66 /* ASAlertControllerPhotoSelectionOption.swift in Sources */,
+				8952031F27BCCE0500309D3E /* ASAlertControllerGonzoStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
