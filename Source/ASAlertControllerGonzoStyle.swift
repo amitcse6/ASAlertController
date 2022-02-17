@@ -52,12 +52,12 @@ public class ASAlertControllerGonzoStyle: ASAlertController {
         setShadow(UIColor(asaValue: "#ffffff", alpha: 1.0), UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0), UIColor(asaValue: "#AAAAAA", alpha: 1.0), 5, scale: true, maskedCorners: [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner])
         self.storeBack?.addSubview(storeBack!.container.unsafelyUnwrapped)
         
-        alertTitleLabel = ASAttributedLabel()
+        alertTitleLabel = ASAAttributedLabel()
         alertTitleLabel?.text = alertTitle
         alertTitleLabel?.textAlignment = .center
         self.storeBack!.container?.addSubview(alertTitleLabel.unsafelyUnwrapped)
         
-        alertMessageLabel = ASAttributedLabel()
+        alertMessageLabel = ASAAttributedLabel()
         alertMessageLabel?.text = alertMessage
         alertMessageLabel?.textAlignment = .center
         self.storeBack!.container?.addSubview(alertMessageLabel.unsafelyUnwrapped)

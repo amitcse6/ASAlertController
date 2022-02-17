@@ -1,5 +1,5 @@
 //
-//  ASAttributedLabel.swift
+//  ASAAttributedLabel.swift
 //  superapp
 //
 //  Created by Amit on 17/8/20.
@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-public typealias ASAttributedLabelIndex = Int
-public typealias ASAttributeIndex = Int
-public typealias ASAttributedLabelEventClosure = (ASAttributedLabelIndex, ASAttributeIndex, ASAttribute) -> Void
-public typealias ASAttributedLabelEventsClosure = (ASAttributedLabelIndex, [ASAttributeIndex], [ASAttribute]) -> Void
+public typealias ASAAttributedLabelIndex = Int
+public typealias ASAAttributeIndex = Int
+public typealias ASAAttributedLabelEventClosure = (ASAAttributedLabelIndex, ASAAttributeIndex, ASAAttribute) -> Void
+public typealias ASAAttributedLabelEventsClosure = (ASAAttributedLabelIndex, [ASAAttributeIndex], [ASAAttribute]) -> Void
 
-public class ASAttributedLabel: UILabel {
+public class ASAAttributedLabel: UILabel {
     final var index: Int = 0
-    final var attributes: [ASAttribute]?
-    final var selectionEvent: ASAttributedLabelEventClosure?
-    final var selectionEvents: ASAttributedLabelEventsClosure?
+    final var attributes: [ASAAttribute]?
+    final var selectionEvent: ASAAttributedLabelEventClosure?
+    final var selectionEvents: ASAAttributedLabelEventsClosure?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -41,7 +41,7 @@ public class ASAttributedLabel: UILabel {
             }
             
             var _indexes: [Int] = [Int]()
-            var _attributes: [ASAttribute] = [ASAttribute]()
+            var _attributes: [ASAAttribute] = [ASAAttribute]()
             for (index, attribute) in attributes.enumerated() {
                 if let value = attribute.value {
                     let termsRange = (self.text! as NSString).range(of: value)
@@ -57,9 +57,9 @@ public class ASAttributedLabel: UILabel {
     
 }
 
-extension ASAttributedLabel {
+extension ASAAttributedLabel {
     @discardableResult
-    public func setAttributes(_ attributes: [ASAttribute]?) -> ASAttributedLabel {
+    public func setAttributes(_ attributes: [ASAAttribute]?) -> ASAAttributedLabel {
         self.attributes = attributes
         if #available(iOS 9.0, *) {
             let attriString = getAttributedStringWith(attributes.unsafelyUnwrapped)
@@ -72,14 +72,14 @@ extension ASAttributedLabel {
     }
     
     @discardableResult
-    public func setEvent(_ selectionEvent: ASAttributedLabelEventClosure?) -> ASAttributedLabel {
+    public func setEvent(_ selectionEvent: ASAAttributedLabelEventClosure?) -> ASAAttributedLabel {
         self.isUserInteractionEnabled = true
         self.selectionEvent = selectionEvent
         return self
     }
     
     @discardableResult
-    public func setEvents(_ selectionEvents: ASAttributedLabelEventsClosure?) -> ASAttributedLabel {
+    public func setEvents(_ selectionEvents: ASAAttributedLabelEventsClosure?) -> ASAAttributedLabel {
         self.isUserInteractionEnabled = true
         self.selectionEvents = selectionEvents
         return self

@@ -1,5 +1,5 @@
 //
-//  ASAttribute.swift
+//  ASAAttribute.swift
 //  superapp
 //
 //  Created by Amit on 17/8/20.
@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-public enum ASAttributeType {
+public enum ASAAttributeType {
     case defaultAttr
     case markeAttr
 }
 
-public class ASAttribute {
+public class ASAAttribute {
     public var value: String?
     public var attrs: [NSAttributedString.Key : Any]?
     
@@ -23,7 +23,7 @@ public class ASAttribute {
         self.attrs = attrs
     }
     
-    public init(value: String, type: ASAttributeType) {
+    public init(value: String, type: ASAAttributeType) {
         self.value = value
         if #available(iOS 8.2, *) {
             self.attrs = getAttrsWith(type)

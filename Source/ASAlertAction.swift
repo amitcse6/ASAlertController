@@ -22,15 +22,17 @@ public class ASAlertAction: UIView {
     var buttonWidth: CGFloat?
     var backColor: UIColor = .white
     var borderColor: UIColor = .gray
+    var fontColor: UIColor = .white
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    init(_ title: String?, _ buttonWidth: CGFloat?, _ backColor: UIColor, _ borderColor: UIColor, _ actionClouser: ASAlertActionClouser?) {
+    init(_ title: String?, _ buttonWidth: CGFloat?, _ fontColor: UIColor, _ backColor: UIColor, _ borderColor: UIColor, _ actionClouser: ASAlertActionClouser?) {
         super.init(frame: CGRect.zero)
         self.title = title
         self.buttonWidth = buttonWidth
+        self.fontColor = fontColor
         self.backColor = backColor
         self.borderColor = borderColor
         self.actionClouser = actionClouser
@@ -54,7 +56,7 @@ public class ASAlertAction: UIView {
         button?.setTitle(title, for: .normal)
         button?.titleLabel?.textAlignment = .center
         button?.titleLabel?.numberOfLines = 0
-        button?.setTitleColor(.black, for: .normal)
+        button?.setTitleColor(fontColor, for: .normal)
         button?.addTarget(self, action: #selector(touchUpInsideEvent(_:)), for: .touchUpInside)
         addSubview(button.unsafelyUnwrapped)
     }

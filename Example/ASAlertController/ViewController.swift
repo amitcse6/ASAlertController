@@ -12,8 +12,8 @@ import ASAlertController
 class ViewController: UIViewController {
     
     private var attributes = [
-        ASAttribute(value: "Your password has been locked. Please reset your password from the link of the forgot password ", type: .defaultAttr),
-        ASAttribute(value: " in the Login screen.", attrs: [.font: UIFont.systemFont(ofSize: 16, weight: .black), .foregroundColor: UIColor.lightGray] as [NSAttributedString.Key : Any]),
+        ASAAttribute(value: "Your password has been locked. Please reset your password from the link of the forgot password ", type: .defaultAttr),
+        ASAAttribute(value: " in the Login screen.", attrs: [.font: UIFont.systemFont(ofSize: 16, weight: .black), .foregroundColor: UIColor.lightGray] as [NSAttributedString.Key : Any]),
     ]
     
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         alert.buttonContainerHeight = 40
         alert.merginColor = .gray
         alert.containerSize = CGSize(width: -1, height: 250)
-        asAlertShow(alert.action("Yes", 100, .green, .green, {
+        asAlertShow(alert.action("Yes", 100, .yellow, .green, .green, {
             alert.dismissController()
         }))
         alert.alertTitleLabel?.text = ""

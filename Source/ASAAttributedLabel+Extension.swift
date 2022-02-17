@@ -1,5 +1,5 @@
 //
-//  ASAttributedLabel+Extension.swift
+//  ASAAttributedLabel+Extension.swift
 //  superapp
 //
 //  Created by Amit on 17/8/20.
@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 @available(iOS 9.0, *)
-extension ASAttributedLabel {
+extension ASAAttributedLabel {
 }
 
 @available(iOS 9.0, *)
-extension ASAttributedLabel {
-    func getAttributedStringWith(_ attributes: [ASAttribute]) -> NSMutableAttributedString {
+extension ASAAttributedLabel {
+    func getAttributedStringWith(_ attributes: [ASAAttribute]) -> NSMutableAttributedString {
         let attriString = NSMutableAttributedString()
         attributes.forEach { (attribute) in
             let string = NSAttributedString(string: "\(attribute.value ?? "")", attributes: attribute.attrs)

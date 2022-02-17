@@ -1,5 +1,5 @@
 //
-//  ASAttribute+Extension.swift
+//  ASAAttribute+Extension.swift
 //  superapp
 //
 //  Created by Amit on 17/8/20.
@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 @available(iOS 8.2, *)
-extension ASAttribute {
-    func getAttrsWith(_ type: ASAttributeType) -> [NSAttributedString.Key : Any] {
+extension ASAAttribute {
+    func getAttrsWith(_ type: ASAAttributeType) -> [NSAttributedString.Key : Any] {
         switch type {
         case .defaultAttr:
             return [.font: UIFont.systemFont(ofSize: 16, weight: .regular), .foregroundColor: UIColor.black] as [NSAttributedString.Key : Any]

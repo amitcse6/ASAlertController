@@ -11,7 +11,7 @@ import UIKit
 @available(iOS 9.0, *)
 public class ASAlertTitleLabel: UIView {
     var container: UIView?
-    var alertTitleLabel: ASAttributedLabel?
+    var alertTitleLabel: ASAAttributedLabel?
     var alertTitle: String?
     var containerPadding: CGFloat = 0
     var padding: CGFloat = 0
@@ -36,7 +36,7 @@ public class ASAlertTitleLabel: UIView {
         container?.backgroundColor = .white
         addSubview(container.unsafelyUnwrapped)
         
-        alertTitleLabel = ASAttributedLabel()
+        alertTitleLabel = ASAAttributedLabel()
         alertTitleLabel?.textColor = .black
         alertTitleLabel?.font = UIFont.systemFont(ofSize: 20)
         alertTitleLabel?.text = alertTitle

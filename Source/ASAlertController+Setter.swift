@@ -11,8 +11,8 @@ import UIKit
 @available(iOS 9.0, *)
 extension ASAlertController {
     @discardableResult
-    public func action(_ title: String, _ buttonWidth: CGFloat?, _ backColor: UIColor, _ borderColor: UIColor, _ actionClouser: @escaping ASAlertActionClouser) -> ASAlertController {
-        alertActions.append(ASAlertAction(title, buttonWidth, backColor, borderColor, actionClouser))
+    public func action(_ title: String, _ buttonWidth: CGFloat?, _ fontColor: UIColor, _ backColor: UIColor, _ borderColor: UIColor, _ actionClouser: @escaping ASAlertActionClouser) -> ASAlertController {
+        alertActions.append(ASAlertAction(title, buttonWidth, fontColor, backColor, borderColor, actionClouser))
         return self
     }
     

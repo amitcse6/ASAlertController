@@ -18,8 +18,8 @@ enum ASAlertControllerType: String {
 @available(iOS 9.0, *)
 public class ASAlertController: UIViewController {
     var storeBack: StoreBack?
-    public var alertTitleLabel: ASAttributedLabel?
-    public var alertMessageLabel: ASAttributedLabel?
+    public var alertTitleLabel: ASAAttributedLabel?
+    public var alertMessageLabel: ASAAttributedLabel?
     var merginView: UIView?
     var buttonContainer: UIView?
     var alertActions: [ASAlertAction] = [ASAlertAction]()
