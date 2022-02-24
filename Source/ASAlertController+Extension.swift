@@ -80,14 +80,14 @@ extension ASAlertController {
             storeBack!.container?.addSubview(action)
             action.translatesAutoresizingMaskIntoConstraints = false
             if index == 0 {
-                action.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: actionPadding).isActive = true
+                action.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: actionPadding.width).isActive = true
             }else {
-                action.leftAnchor.constraint(equalTo: alertActions[index-1].rightAnchor, constant: actionPadding).isActive = true
+                action.leftAnchor.constraint(equalTo: alertActions[index-1].rightAnchor, constant: actionPadding.width).isActive = true
             }
             if index == alertActions.count - 1 {
-                action.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -actionPadding).isActive = true
+                action.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -actionPadding.width).isActive = true
             }
-            action.bottomAnchor.constraint(equalTo: storeBack!.container!.bottomAnchor, constant: -actionPadding).isActive = true
+            action.bottomAnchor.constraint(equalTo: storeBack!.container!.bottomAnchor, constant: -actionPadding.height).isActive = true
             action.widthAnchor.constraint(equalTo: alertActions.first!.widthAnchor).isActive = true
         }
     }
@@ -125,14 +125,14 @@ extension ASAlertController {
             storeBack!.container?.addSubview(action)
             action.translatesAutoresizingMaskIntoConstraints = false
             if index == 0 {
-                action.topAnchor.constraint(equalTo: storeBack!.container!.topAnchor, constant: actionPadding).isActive = true
+                action.topAnchor.constraint(equalTo: storeBack!.container!.topAnchor, constant: actionPadding.height).isActive = true
             }else {
-                action.topAnchor.constraint(equalTo: alertActions[index-1].bottomAnchor, constant: actionPadding).isActive = true
+                action.topAnchor.constraint(equalTo: alertActions[index-1].bottomAnchor, constant: actionPadding.height).isActive = true
             }
-            action.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: actionPadding).isActive = true
-            action.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -actionPadding).isActive = true
+            action.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: actionPadding.width).isActive = true
+            action.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -actionPadding.width).isActive = true
             if index == alertActions.count - 1 {
-                action.bottomAnchor.constraint(equalTo: storeBack!.container!.bottomAnchor, constant: -actionPadding).isActive = true
+                action.bottomAnchor.constraint(equalTo: storeBack!.container!.bottomAnchor, constant: -actionPadding.height).isActive = true
             }
             action.heightAnchor.constraint(equalTo: alertActions.first!.heightAnchor).isActive = true
         }
@@ -195,14 +195,14 @@ extension ASAlertController {
             action.translatesAutoresizingMaskIntoConstraints = false
             action.topAnchor.constraint(equalTo: buttonContainer!.topAnchor, constant: 0).isActive = true
             if index == 0 {
-                action.leftAnchor.constraint(equalTo: buttonContainer!.leftAnchor, constant: 0).isActive = true
+                action.leftAnchor.constraint(equalTo: buttonContainer!.leftAnchor, constant: actionPadding.width).isActive = true
             }else {
-                action.leftAnchor.constraint(equalTo: alertActions[index-1].rightAnchor, constant: 0).isActive = true
+                action.leftAnchor.constraint(equalTo: alertActions[index-1].rightAnchor, constant: actionPadding.width).isActive = true
             }
             if index == alertActions.count - 1 {
-                action.rightAnchor.constraint(equalTo: buttonContainer!.rightAnchor, constant: -0).isActive = true
+                action.rightAnchor.constraint(equalTo: buttonContainer!.rightAnchor, constant: -actionPadding.width).isActive = true
             }
-            action.bottomAnchor.constraint(equalTo: buttonContainer!.bottomAnchor, constant: -0).isActive = true
+            action.bottomAnchor.constraint(equalTo: buttonContainer!.bottomAnchor, constant: -actionPadding.height).isActive = true
             if let buttonWidth = action.buttonWidth {
                 action.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
             }else {

@@ -31,7 +31,7 @@ public class ASAlertController: UIViewController {
     public var containerSize: CGSize = CGSize(width: -1, height: 200)
     public var containerPadding: CGFloat = 16
     public var padding: CGFloat = 16
-    public var actionPadding: CGFloat = 4
+    public var actionPadding: CGSize = CGSize(width: 4, height: 4)
     public var buttonContainerHeight: CGFloat = 40
     public var merginColor: UIColor = .gray
     public var cornerRadious: CGFloat = 5
