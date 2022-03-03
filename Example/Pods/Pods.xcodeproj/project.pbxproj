@@ -22,12 +22,13 @@
 		7C590DACA78EDCDD2725EF295B82D03A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		88396E68DC05A379282F3B374F75F43C /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE35F81C954881204729C569018D98C0 /* FBSnapshotTestController.m */; };
 		8952031F27BCCE0500309D3E /* ASAlertControllerGonzoStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952031E27BCCE0500309D3E /* ASAlertControllerGonzoStyle.swift */; };
-		8952032127BCDB2400309D3E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032027BCDB2400309D3E /* UIView+Extension.swift */; };
 		8952032727BCDE0D00309D3E /* ASAAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032227BCDE0D00309D3E /* ASAAttribute.swift */; };
 		8952032827BCDE0D00309D3E /* ASAAttribute+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032327BCDE0D00309D3E /* ASAAttribute+Extension.swift */; };
 		8952032927BCDE0D00309D3E /* ASAAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032427BCDE0D00309D3E /* ASAAttributedLabel.swift */; };
 		8952032A27BCDE0D00309D3E /* ASAAttributedLabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032527BCDE0D00309D3E /* ASAAttributedLabel+Extension.swift */; };
 		8952032B27BCDE0D00309D3E /* UITapGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952032627BCDE0D00309D3E /* UITapGestureRecognizer+Extension.swift */; };
+		89827FF927D0655E009A8BDC /* ASUIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89827FF727D0655E009A8BDC /* ASUIColor+Extension.swift */; };
+		89827FFA27D0655E009A8BDC /* ASUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89827FF827D0655E009A8BDC /* ASUIView+Extension.swift */; };
 		8C1D6975FFE8D0765B3E9AED0AFD3F52 /* Pods-ASAlertController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 23AA197DF8FF0CCF6582AC4E00816244 /* Pods-ASAlertController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C9311B367B068AD2327D7C3A467CF52 /* Pods-ASAlertController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F53816921A799CA381DADB63567E1002 /* Pods-ASAlertController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CE3BF0ACE07EA42DD5DAC871BF4B767 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C8BBFE2D9E3A9C566221B1DE04E91C /* FBSnapshotTestCase.m */; };
@@ -38,7 +39,6 @@
 		B74CD6E6EBEA0B642776BCB37850415D /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = EA718A72E676291836EBB46B85242155 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		C49D52712466511E332C952834C81FE1 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = D3067EAFD5B0A06885968D137840DB70 /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D04AAC8B22E4A4DC4F39891C4E52F251 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = E354F8FD537351F26F7949B4EBFA5101 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		D618939D255AB91400741C66 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6189392255AB91400741C66 /* UIColor+Extension.swift */; };
 		D618939E255AB91400741C66 /* ASAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6189393255AB91400741C66 /* ASAlertController.swift */; };
 		D618939F255AB91400741C66 /* ASAlertGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6189394255AB91400741C66 /* ASAlertGestureRecognizer.swift */; };
 		D61893A0255AB91400741C66 /* ASAlertControllerPhotoSelectionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6189395255AB91400741C66 /* ASAlertControllerPhotoSelectionOption.swift */; };
@@ -110,12 +110,13 @@
 		83DDC2B5941922914168A54557B21420 /* ASAlertController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ASAlertController-dummy.m"; sourceTree = "<group>"; };
 		88EE4F95531D217A595AA8D85A24FA39 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
 		8952031E27BCCE0500309D3E /* ASAlertControllerGonzoStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASAlertControllerGonzoStyle.swift; sourceTree = "<group>"; };
-		8952032027BCDB2400309D3E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		8952032227BCDE0D00309D3E /* ASAAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAAttribute.swift; sourceTree = "<group>"; };
 		8952032327BCDE0D00309D3E /* ASAAttribute+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ASAAttribute+Extension.swift"; sourceTree = "<group>"; };
 		8952032427BCDE0D00309D3E /* ASAAttributedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAAttributedLabel.swift; sourceTree = "<group>"; };
 		8952032527BCDE0D00309D3E /* ASAAttributedLabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ASAAttributedLabel+Extension.swift"; sourceTree = "<group>"; };
 		8952032627BCDE0D00309D3E /* UITapGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
+		89827FF727D0655E009A8BDC /* ASUIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ASUIColor+Extension.swift"; sourceTree = "<group>"; };
+		89827FF827D0655E009A8BDC /* ASUIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ASUIView+Extension.swift"; sourceTree = "<group>"; };
 		8CAA89EEF1039078430D7A886477E365 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8CE253DE76CA5275812B48BF19B026FA /* Pods-ASAlertController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ASAlertController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8F1FE5C23F1BC485C54B92C32E78391F /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 		C3C19CFFB7551E1DA60FCEE4A7171998 /* Pods-ASAlertController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ASAlertController_Example-frameworks.sh"; sourceTree = "<group>"; };
 		CCC06F1F093407E7B5E2F585D39C4BC1 /* ASAlertController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ASAlertController-Info.plist"; sourceTree = "<group>"; };
 		D3067EAFD5B0A06885968D137840DB70 /* FBSnapshotTestCasePlatform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCasePlatform.h; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.h; sourceTree = "<group>"; };
-		D6189392255AB91400741C66 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D6189393255AB91400741C66 /* ASAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAlertController.swift; sourceTree = "<group>"; };
 		D6189394255AB91400741C66 /* ASAlertGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAlertGestureRecognizer.swift; sourceTree = "<group>"; };
 		D6189395255AB91400741C66 /* ASAlertControllerPhotoSelectionOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASAlertControllerPhotoSelectionOption.swift; sourceTree = "<group>"; };
@@ -382,12 +382,13 @@
 		D6189391255AB91400741C66 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				89827FF727D0655E009A8BDC /* ASUIColor+Extension.swift */,
+				89827FF827D0655E009A8BDC /* ASUIView+Extension.swift */,
 				8952032227BCDE0D00309D3E /* ASAAttribute.swift */,
 				8952032327BCDE0D00309D3E /* ASAAttribute+Extension.swift */,
 				8952032427BCDE0D00309D3E /* ASAAttributedLabel.swift */,
 				8952032527BCDE0D00309D3E /* ASAAttributedLabel+Extension.swift */,
 				8952032627BCDE0D00309D3E /* UITapGestureRecognizer+Extension.swift */,
-				D6189392255AB91400741C66 /* UIColor+Extension.swift */,
 				D6189393255AB91400741C66 /* ASAlertController.swift */,
 				D6189394255AB91400741C66 /* ASAlertGestureRecognizer.swift */,
 				D6189396255AB91400741C66 /* ASAlertMessageLabel.swift */,
@@ -399,7 +400,6 @@
 				D618939A255AB91400741C66 /* ASAlertAction.swift */,
 				D618939B255AB91400741C66 /* ASAlertTitleLabel.swift */,
 				D618939C255AB91400741C66 /* ASAlertController+Setter.swift */,
-				8952032027BCDB2400309D3E /* UIView+Extension.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -598,7 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D618939D255AB91400741C66 /* UIColor+Extension.swift in Sources */,
+				89827FF927D0655E009A8BDC /* ASUIColor+Extension.swift in Sources */,
 				D61893A7255AB91400741C66 /* ASAlertController+Setter.swift in Sources */,
 				8952032A27BCDE0D00309D3E /* ASAAttributedLabel+Extension.swift in Sources */,
 				0A9E7E0A52728CEFFF8993C1C81B3B5E /* ASAlertController-dummy.m in Sources */,
@@ -609,10 +609,10 @@
 				8952032827BCDE0D00309D3E /* ASAAttribute+Extension.swift in Sources */,
 				D61893A4255AB91400741C66 /* ASAlertController+Getter.swift in Sources */,
 				D618939E255AB91400741C66 /* ASAlertController.swift in Sources */,
-				8952032127BCDB2400309D3E /* UIView+Extension.swift in Sources */,
 				D61893A3255AB91400741C66 /* ASAlertControllerClassic.swift in Sources */,
 				D61893A2255AB91400741C66 /* ASAlertController+Extension.swift in Sources */,
 				8952032727BCDE0D00309D3E /* ASAAttribute.swift in Sources */,
+				89827FFA27D0655E009A8BDC /* ASUIView+Extension.swift in Sources */,
 				D618939F255AB91400741C66 /* ASAlertGestureRecognizer.swift in Sources */,
 				8952032927BCDE0D00309D3E /* ASAAttributedLabel.swift in Sources */,
 				D61893A0255AB91400741C66 /* ASAlertControllerPhotoSelectionOption.swift in Sources */,

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func setCurveStyle1(_ color: UIColor) {
+    func setCurveStyle2(_ color: UIColor) {
         layer.cornerRadius = 0
         layer.borderWidth = 1
         layer.borderColor = color.cgColor

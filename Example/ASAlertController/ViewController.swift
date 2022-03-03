@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         alert.setCornerRadious(5)
         alert.buttonContainerHeight = 40
         alert.merginColor = .gray
-        alert.containerSize = CGSize(width: -1, height: 250)
+        alert.containerSize = CGSize(width: -1, height: 400)
         asAlertShow(alert.action("Yes", 100, .white, .green, .clear, {
             alert.dismissController()
             print("Yes")
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
             alert.dismissController()
             print("Cancel")
         }))
-        alert.alertTitleLabel?.text = ""
+        alert.alertTitleLabel?.text = "Alert!"
         alert.alertMessageLabel?.numberOfLines = 0
         alert.alertMessageLabel?
             .setAttributes(attributes)

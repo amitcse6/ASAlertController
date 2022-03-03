@@ -35,4 +35,20 @@ extension ASAlertController {
         }
         return self
     }
+    
+    @discardableResult
+    public func cornerCurve(_ backgroundColor: UIColor, _ borderColor: UIColor, _ cornerRadius: CGFloat, scale: Bool, maskedCorners: CACornerMask) -> ASAlertController {
+        self.storeBack!.container?.layer.shouldRasterize = true
+        self.storeBack!.container?.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+        self.storeBack!.container?.backgroundColor = backgroundColor
+        self.storeBack!.container?.layer.cornerRadius = cornerRadius
+        self.storeBack!.container?.layer.borderColor = borderColor.cgColor
+        self.storeBack!.container?.layer.borderWidth = 1
+        if #available(iOS 11.0, *) {
+            self.storeBack!.container?.layer.maskedCorners = maskedCorners
+        } else {
+            // Fallback on earlier versions
+        }
+        return self
+    }
 }

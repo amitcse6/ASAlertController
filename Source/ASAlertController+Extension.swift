@@ -162,10 +162,10 @@ extension ASAlertController {
         alertTitleLabel?.topAnchor.constraint(equalTo: storeBack!.container!.topAnchor, constant: padding).isActive = true
         alertTitleLabel?.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: padding).isActive = true
         alertTitleLabel?.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -padding).isActive = true
-        alertTitleLabel?.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        //alertTitleLabel?.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         
-        merginView?.setCurveStyle1(merginColor)
+        merginView?.setCurveStyle2(merginColor)
         merginView?.translatesAutoresizingMaskIntoConstraints = false
         merginView?.topAnchor.constraint(equalTo: storeBack!.container!.topAnchor, constant: 0).isActive = true
         merginView?.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: 0).isActive = true
@@ -176,6 +176,7 @@ extension ASAlertController {
         alertMessageLabel?.topAnchor.constraint(equalTo: alertTitleLabel!.bottomAnchor, constant: padding).isActive = true
         alertMessageLabel?.leftAnchor.constraint(equalTo: storeBack!.container!.leftAnchor, constant: padding).isActive = true
         alertMessageLabel?.rightAnchor.constraint(equalTo: storeBack!.container!.rightAnchor, constant: -padding).isActive = true
+        alertMessageLabel?.bottomAnchor.constraint(equalTo: merginView!.bottomAnchor, constant: -padding).isActive = true
 
         buttonContainer?.translatesAutoresizingMaskIntoConstraints = false
         let leadingAnchor = buttonContainer?.leadingAnchor.constraint(greaterThanOrEqualTo: storeBack!.container!.leadingAnchor, constant: containerPadding)
