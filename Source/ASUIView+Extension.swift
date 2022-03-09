@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     func setCurveStyle2(_ color: UIColor) {
-        layer.cornerRadius = 0
+        layer.cornerRadius = 16
         layer.borderWidth = 1
         layer.borderColor = color.cgColor
         layer.masksToBounds = true

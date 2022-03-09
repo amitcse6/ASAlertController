@@ -45,11 +45,10 @@ public class ASAlertControllerGonzoStyle: ASAlertController {
         storeBack?.delegate = self
         self.view.addSubview(storeBack.unsafelyUnwrapped)
         
-        
         storeBack!.container = UIView()
         storeBack!.container?.tag = 10
         storeBack!.container?.isUserInteractionEnabled = true
-        cornerCurve(UIColor(asaValue: "#ffffff", alpha: 1.0), UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0), 5, scale: true, maskedCorners: [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner])
+        cornerCurve(UIColor(asaValue: "#ffffff", alpha: 1.0), UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0), 16, scale: true, maskedCorners: [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner])
         //cornerCurve(UIColor(asaValue: "#ffffff", alpha: 1.0), UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0), 5, scale: true, maskedCorners: [.layerMinXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner])
         self.storeBack?.addSubview(storeBack!.container.unsafelyUnwrapped)
         
