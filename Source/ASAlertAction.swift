@@ -13,16 +13,16 @@ public typealias ASAlertActionClouser = () -> Void
 
 @available(iOS 9.0, *)
 public class ASAlertAction: UIView {
-    var container: UIView?
-    var button: UIButton?
-    var title: String?
-    var actionClouser: ASAlertActionClouser?
-    var containerPadding: CGFloat = 4
-    var padding: CGFloat = 4
-    var buttonWidth: CGFloat?
-    var backColor: UIColor = .white
-    var borderColor: UIColor = .gray
-    var fontColor: UIColor = .white
+    public var container: UIView?
+    public var button: UIButton?
+    public var title: String?
+    public var actionClouser: ASAlertActionClouser?
+    public var containerPadding: CGFloat = 4
+    public var padding: CGFloat = 4
+    public var buttonWidth: CGFloat?
+    public var backColor: UIColor = .white
+    public var borderColor: UIColor = .gray
+    public var fontColor: UIColor = .white
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)

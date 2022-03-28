@@ -39,6 +39,7 @@ class ViewController: UIViewController {
             alert.dismissController()
             print("Cancel")
         }))
+        alert.getAlertAction(1)?.button?.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         alert.alertTitleLabel?.text = "Alert!"
         alert.alertMessageLabel?.numberOfLines = 0
         alert.alertMessageLabel?

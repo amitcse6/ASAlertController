@@ -72,4 +72,16 @@ extension ASAlertController: StoreBackDelegate {
     func onTapBack() {
         dismissController()
     }
+    
+    public func getAlertAction(_ _index: Int) -> ASAlertAction? {
+        let action = self.alertActions.enumerated().first { (index, action) in
+            return index == _index
+        }
+        return action?.element
+    }
+    
+    public func getAlertActions() -> [ASAlertAction] {
+        return self.alertActions
+    }
 }
+
